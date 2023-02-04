@@ -1,0 +1,306 @@
+@charset "UTF-8";
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header__conteiner {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "logo logo ziro ziro home home home home home button button button";
+}
+
+.header__logo {
+  grid-area: logo;
+  justify-self: end;
+}
+
+.header__list {
+  grid-area: home;
+  justify-self: start;
+  padding-top: 5rem;
+}
+
+.header__item {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  max-width: 30rem;
+  padding-left: 3.5rem;
+}
+
+.header__item a {
+  display: inline-block;
+  color: black;
+  line-height: 2;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.header__item a:after {
+  display: block;
+  content: "";
+  background-color: #EF8D21;
+  height: 3px;
+  width: 0%;
+  left: 50%;
+  position: absolute;
+  -webkit-transition: width 0.2s ease-in-out;
+  -moz--transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.header__item a:hover:after,
+.header__item a:focus:after {
+  width: 100%;
+}
+
+.header__buton {
+  grid-area: button;
+  justify-self: start;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  padding-top: 5rem;
+}
+
+.header__buton__1 {
+  color: black;
+  margin-right: 2rem;
+}
+
+.btn {
+  text-decoration: none;
+}
+
+.header__buton__2 {
+  padding: 1.5rem 2rem;
+  background-color: #EF8D21;
+  color: #FFFCF9;
+  border-radius: 100px;
+}
+
+.main__conteiner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  max-width: 130rem;
+  height: 66rem;
+  grid-template-columns: 50% 50%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10rem;
+  position: relative;
+}
+
+.text__img {
+  position: absolute;
+  top: 3rem;
+  left: 5rem;
+  padding-left: none;
+}
+
+.text__one {
+  width: 100%;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 7rem;
+  color: #364547;
+  padding-top: 10rem;
+  text-shadow: 0.1rem 0.5rem 0.4rem rgba(93, 98, 98, 0.7921568627);
+}
+
+.text__two {
+  font-weight: 700;
+  font-size: 6rem;
+  line-height: 10rem;
+  color: #364547;
+  margin-top: -2.5rem;
+  margin-bottom: 1.1rem;
+  text-shadow: 0.1rem 0.5rem 0.4rem rgba(93, 98, 98, 0.7921568627);
+}
+
+.text__two__span {
+  color: #EF8D21;
+}
+
+.text__paragraph {
+  font-weight: 400;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 3%;
+  color: #364547;
+  text-shadow: 0.1rem 0.5rem 0.4rem rgba(93, 98, 98, 0.7921568627);
+}
+
+.text__button {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2.3rem;
+  width: 100%;
+  height: 7rem;
+  background-color: #FFFCF9;
+  margin-top: 2rem;
+  padding: 2rem 1.8rem;
+  border-radius: 50px;
+  box-shadow: 0 7px 7px -7px rgba(0, 0, 0, 0.5);
+}
+
+.btn__text, .btn__text:link, .btn__text:visited {
+  color: #8f8f8f;
+  text-decoration: none;
+  padding: 0.7rem;
+  background-color: #FFFCF9;
+  border-radius: 5rem;
+  transition: all 0.3s;
+  position: relative;
+  font-size: 1.5rem;
+  border: none;
+  width: 23%;
+  align-self: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn__text:hover {
+  transform: translateY(-4px);
+  box-shadow: 1px 11px 11px -3px #EF8D21;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.btn__text::after {
+  opacity: 0;
+  transform: scaleX(1.5) scaleY(1.7);
+}
+
+.btn__text:active {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 7px -7px rgba(0, 0, 0, 0.5);
+}
+
+.btn__text::after {
+  content: "";
+  background: #FFFCF9;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.4s;
+}
+
+.text__line {
+  padding-left: 0.5rem;
+  /* необходим для формирования позиций линий */
+  position: relative;
+  /* блок будет занимать ширину по размеру контента в нём*/
+  display: inline-block;
+}
+
+.text__line:after {
+  content: " ";
+  background: #364547;
+  margin: 0px -5px;
+  width: 2px;
+  height: 3.5rem;
+  /* линия смещена на 10px справа от текста*/
+  right: -0.5rem;
+  left: 0.5rem;
+  /* включаем абсолютное позиционирование относительно блока с relative */
+  position: absolute;
+}
+
+.img__item {
+  position: relative;
+}
+
+.img__item__1 {
+  position: absolute;
+  top: 1rem;
+  right: 16rem;
+  z-index: 5;
+}
+
+.img__item__2 {
+  position: absolute;
+  left: 25rem;
+}
+
+.img__item__3 {
+  position: absolute;
+  top: 23.5rem;
+  right: 11rem;
+}
+
+.img__item__4 {
+  position: absolute;
+  top: 22rem;
+  right: 9.4rem;
+}
+
+.img__item__5 {
+  position: absolute;
+  top: 20rem;
+  right: 7.5rem;
+}
+
+.img__text {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #364547;
+  text-shadow: 0.1rem 0.5rem 0.4rem rgba(93, 98, 98, 0.7921568627);
+}
+
+.img__price {
+  font-weight: 700;
+  font-size: 5.5rem;
+  line-height: 8rem;
+  color: #EF8D21;
+  text-shadow: 0.1rem 0.5rem 0.4rem rgba(93, 98, 98, 0.7921568627);
+}
+
+.img__conteiner {
+  position: absolute;
+  top: 18rem;
+  right: 10rem;
+}
+
+.list__left {
+  width: 50%;
+  position: absolute;
+  left: 0rem;
+  top: 43rem;
+  z-index: -1;
+}
+
+.list__right {
+  position: absolute;
+  top: 43rem;
+  right: -5rem;
+}/*# sourceMappingURL=style.css.map */
